@@ -1,7 +1,8 @@
 CompileFlags:
   Add: [
     "-std=c++17", # needed when using MSVC
-    "-IC:\\EDisk\\CppCodes\\CppPrimerCodes\\CppPrimer5thForBilibili\\includes", # you should replace this to your own include path of this project
+    "-I/home/sonnycalcr/EDisk/CppCodes/CppPrimer5thBookCodes",
+    # "-IC:\\EDisk\\CppCodes\\CppPrimerCodes\\CppPrimer5thForBilibili\\includes", # you should replace this to your own include path of this project
     -Wno-microsoft-goto,
     -Wno-nonportable-include-path,
     -Wno-microsoft-extra-qualification,
