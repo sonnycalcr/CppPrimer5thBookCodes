@@ -3,5 +3,5 @@ BasedOnStyle: llvm
 IndentWidth: 4
 
 # 不要给头文件排序
-SortIncludes: false
+# SortIncludes: false
 ColumnLimit: 300
