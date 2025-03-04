@@ -12,7 +12,9 @@ template <typename T> class Foo {
     // other implementation members
 };
 
-template <typename T> std::size_t Foo<T>::ctr = 0;
+// p915_1
+template <typename T>        //
+std::size_t Foo<T>::ctr = 0; // define and initialize ctr
 
 int main(int argc, char *argv[]) {
     Foo<int>::set_count(12);
@@ -27,6 +29,13 @@ int main(int argc, char *argv[]) {
     std::cout << fi.count() << std::endl;
     std::cout << fi2.count() << std::endl;
     std::cout << fi3.count() << std::endl;
+
+    // p915_2
+    Foo<int> fi4; // instantiates Foo<int> class
+    // and the static data member ctr
+    auto ct = Foo<int>::count(); // instantiates Foo<int>::count
+    ct = fi4.count();            // uses Foo<int>::count
+    // ct = Foo::count(); // error: which template instantiation?
 
     return 0; //
 }
