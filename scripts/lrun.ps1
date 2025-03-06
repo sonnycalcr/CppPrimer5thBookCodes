@@ -1,32 +1,16 @@
 #
 # run exe file that has already been compiled before
 #
-function getExePathFromCMakeLists()
-{
-  $content = Get-Content -Path "./CMakeLists.txt"
-  $lastLine = ""
-  $contentContainedExeName = ""
-  foreach($line in $content)
-  {
-    if ($line.StartsWith("add_executable"))
-    {
-      $index = $line.IndexOf("(")
-      $contentContainedExeName = $line.Substring($index + 1)
-      if ([string]::IsNullOrEmpty($contentContainedExeName))
-      {
-        $lastLine = $line
-        continue
-      }
-      break
-    } elseif ($lastLine.StartsWith("add_executable"))
-    {
-      $contentContainedExeName = $line
+function getExePathFromCMakeLists() {
+  $content = Get-Content -Raw -Path "./CMakeLists.txt"
+  $exePath = ""
+  foreach ($line in $content -split "`n") {
+    if ($line -match 'set\(MY_EXECUTABLE_NAME[^\"]*\"([^\"]+)\"') {
+      $exeName = $matches[1]
+      $exePath = "./build/bin/Debug/$exeName" + ".exe"
       break
     }
-    $lastLine = $line
   }
-  $result = -split $contentContainedExeName
-  $exePath = "./build/DEBUG/" + $result[0] + ".exe"
   return $exePath
 }
 
