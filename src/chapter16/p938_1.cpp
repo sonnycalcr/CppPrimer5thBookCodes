@@ -1,3 +1,4 @@
+#include <initializer_list>
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -7,6 +8,7 @@ using namespace std;
 template <typename T> class Blob {
   public:
     template <typename It> Blob(It b, It e);
+    Blob(std::initializer_list<T> il);
 
     typename std::vector<T>::iterator begin() { return data->begin(); }
     typename std::vector<T>::iterator end() { return data->end(); }
@@ -24,6 +26,9 @@ template <typename T> class Blob {
 template <typename T>  // type parameter for the class
 template <typename It> // type parameter for the constructor
 Blob<T>::Blob(It b, It e) : data(std::make_shared<std::vector<T>>(b, e)) {}
+
+template <typename T> // type parameter for the class
+Blob<T>::Blob(std::initializer_list<T> il) : data(std::make_shared<std::vector<T>>(il)) {}
 
 // p938_2
 // a trailing return lets us declare the return type after the parameter list is seen
