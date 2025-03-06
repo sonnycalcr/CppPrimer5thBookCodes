@@ -6,7 +6,6 @@
 using namespace std;
 
 // forward declarations needed for friend declarations in Blob
-
 template <typename> class BlobPtr;
 template <typename> class Blob; // needed for parameters in operator==
 template <typename T> bool operator==(const Blob<T> &, const Blob<T> &);
