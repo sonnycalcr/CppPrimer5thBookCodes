@@ -1,0 +1,62 @@
+{
+  "Void Main Function": {
+    "scope": "c,cpp",
+    "prefix": "maina",
+    "body": [
+      "int main() {", //
+      "    $0",
+      "    return 0; //",
+      "}"
+    ],
+    "description": "Insert a C++ main function"
+  },
+  "Main Function": {
+    "scope": "c,cpp",
+    "prefix": "main",
+    "body": [
+      "int main(int argc, char *argv[]) {", //
+      "    $0",
+      "    return 0; //",
+      "}"
+    ],
+    "description": "Insert a C++ main function"
+  },
+  "Void Simple Template": {
+    "scope": "c,cpp",
+    "prefix": "stma",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "    $0",
+      "    return 0; //",
+      "}"
+    ],
+    "description": "Insert a C++ main function"
+  },
+  "Simple Template": {
+    "scope": "c,cpp",
+    "prefix": "stm",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "",
+      "int main(int argc, char *argv[]) {",
+      "    $0",
+      "    return 0; //",
+      "}"
+    ],
+    "description": "Insert a C++ main function"
+  },
+  "std namespace": {
+    "scope": "c,cpp",
+    "prefix": "ustd",
+    "body": [
+      "using namespace std;" //
+    ],
+    "description": "using namespace std"
+  }
+}
