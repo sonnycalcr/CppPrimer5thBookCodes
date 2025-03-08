@@ -13,5 +13,5 @@ set(MY_EXECUTABLE_NAME "cpp_primer")
 
 add_executable(
   ${MY_EXECUTABLE_NAME}
-  "src/chapter16/p938_1.cpp"
+  "src/chapter16/p947_1.cpp"
 )
